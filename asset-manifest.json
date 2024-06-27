@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/weraseemann/meet.git/static/css/main.f855e6bc.css",
+    "main.js": "/weraseemann/meet.git/static/js/main.af17cd28.js",
+    "static/js/453.4a9980c6.chunk.js": "/weraseemann/meet.git/static/js/453.4a9980c6.chunk.js",
+    "service-worker.js": "/weraseemann/meet.git/service-worker.js",
+    "static/media/logo.svg": "/weraseemann/meet.git/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/weraseemann/meet.git/index.html",
+    "main.f855e6bc.css.map": "/weraseemann/meet.git/static/css/main.f855e6bc.css.map",
+    "main.af17cd28.js.map": "/weraseemann/meet.git/static/js/main.af17cd28.js.map",
+    "453.4a9980c6.chunk.js.map": "/weraseemann/meet.git/static/js/453.4a9980c6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.af17cd28.js"
+  ]
+}
