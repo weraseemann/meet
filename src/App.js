@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+// src/App.js
+
+import CitySearch from './components/CitySearch';
+import EventList from './components/EventList';
+import React, { useState, useEffect } from 'react';
+import NumberOfEvents from './NumberOfEvents';
+import { getEvents } from './api'; // Assume this function fetches events
+import Event from './Event'; // Assume this component displays an individual event
 import './App.css';
 
-function App() {
+const App = () => {
+  const [events, setEvents] = useState([]);
+  const [numberOfEvents, setNumberOfEvents] = useState(20);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const allEvents = await getEvents();
+      setEvents(allEvents.slice(0, numberOfEvents));
+    };
+    fetchEvents();
+  }, [numberOfEvents]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CitySearch />
+      <EventList />
+      <NumberOfEvents setNumberOfEvents={setNumberOfEvents} />
+      <div>
+        {events.map((event) => (
+          <Event key={event.id} event={event} />
+        ))}
+      </div>
     </div>
   );
-}
-
-export default App;
+};
