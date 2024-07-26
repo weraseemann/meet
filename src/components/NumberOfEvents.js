@@ -1,21 +1,28 @@
 // src/components/NumberOfEvents.js
 
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
-const NumberOfEvents = ({ numberOfEvents, onNumberOfEventsChange }) => {
+const NumberOfEvents = ({ setNumberOfEvents }) => {
+    const [number, setNumber] = useState(32);
+
+    const handleInputChange = (event) => {
+        const value = event.target.value;
+        setNumber(value);
+        setNumberOfEvents(value);
+    };
+
     return (
-        <div className="events-number-buttons">
-            <button className="number-button" onClick={() => onNumberOfEventsChange(5)}>5 events</button>
-            <button className="number-button" onClick={() => onNumberOfEventsChange(10)}>10 events</button>
-            <button className="number-button" onClick={() => onNumberOfEventsChange(20)}>20 events</button>
-            <button className="number-button" onClick={() => onNumberOfEventsChange(32)}>32 events</button>
+        <div>
+            <label htmlFor="number-of-events">Number of Events: </label>
+            <input
+                id="number-of-events"
+                type="number"
+                value={number}
+                onChange={handleInputChange}
+                role="textbox"
+            />
         </div>
     );
-};
-
-NumberOfEvents.propTypes = {
-    numberOfEvents: PropTypes.number.isRequired,
-    onNumberOfEventsChange: PropTypes.func.isRequired,
 };
 
 export default NumberOfEvents;

@@ -3,9 +3,9 @@
 import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 import React, { useState, useEffect } from 'react';
-import NumberOfEvents from './NumberOfEvents';
+import NumberOfEvents from './components/NumberOfEvents';
 import { getEvents } from './api'; // Assume this function fetches events
-import Event from './Event'; // Assume this component displays an individual event
+import Event from './components/Event'; // Assume this component displays an individual event
 import './App.css';
 
 const App = () => {
@@ -32,3 +32,5 @@ const App = () => {
     </div>
   );
 };
+
+export default App;

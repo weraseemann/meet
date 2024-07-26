@@ -1,7 +1,11 @@
 // src/__tests__ / App.test.js
 
+import React from 'react';
 import { render } from '@testing-library/react';
 import App from '../App';
+import '@testing-library/jest-dom/extend-expect';
+import { getEvents } from '../api'; // Mock the getEvents functionimport { getEvents } from '../api'; // Mock the getEvents function
+jest.mock('../api');
 
 describe('<App /> component', () => {
     let AppDOM;
@@ -16,6 +20,7 @@ describe('<App /> component', () => {
     test('render CitySearch', () => {
         expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
     });
+
     test('render NumberofEvents', () => {
         expect(AppDOM.container.firstChild.querySelector('#number-of-events')).toBeInTheDocument();
     });
@@ -32,3 +37,5 @@ describe('<App /> component', () => {
         expect(events).toHaveLength(20);
     });
 });
+
+
