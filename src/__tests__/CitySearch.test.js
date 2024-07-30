@@ -1,3 +1,5 @@
+/* eslint-disable testing-library/no-render-in-setup */
+/* eslint-disable testing-library/prefer-screen-queries */
 // src/__tests__/CitySearch.test.js
 
 import { render } from '@testing-library/react';

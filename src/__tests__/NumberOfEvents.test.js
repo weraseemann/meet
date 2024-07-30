@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import NumberOfEvents from '../NumberOfEvents';
+import NumberOfEvents from '..components/NumberOfEvents';
 
 describe('NumberOfEvents Component', () => {
     test('contains an element with the role of the textbox', () => {

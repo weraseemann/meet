@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 // src/components/NumberOfEvents.js
 
 import React, { useState } from 'react';
