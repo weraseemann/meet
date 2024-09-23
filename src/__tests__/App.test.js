@@ -30,14 +30,11 @@ describe('<App /> component', () => {
         expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
     });
 
-    test('renders the NumberOfEvents component', async () => {
-        const { container } = render(<App />);
-        const numberOfEventsInput = container.firstChild.querySelector('#number-of-events');
-        expect(numberOfEventsInput).toBeInTheDocument();
+    test('render NumberofEvents', () => {
+        expect(AppDOM.querySelector('#number-of-events')).toBeInTheDocument();
     });
 
     test('displays 20 events by default', async () => {
-        render(<App />);
         const events = await screen.findAllByText(/Event/);
         expect(events).toHaveLength(20);
     });

@@ -1,9 +1,10 @@
 
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Event from './Event'; // Adjust the import path as necessary
-import { getEvents } from './api'; // Import the getEvents function
+import Event from '../components/Event'; // Adjust the import path as necessary
+import { getEvents } from '../api'; // Import the getEvents function
+
 
 describe('Event Component', () => {
     let event;
