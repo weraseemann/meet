@@ -4,26 +4,29 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 // src/components/NumberOfEvents.js
 
-import React, { useState } from 'react';
-
-const NumberOfEvents = ({ setNumberOfEvents }) => {
-    const [number, setNumber] = useState(32);
-
-    const handleInputChange = (event) => {
+const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
+    const handleInputChanged = (event) => {
         const value = event.target.value;
-        setNumber(value);
-        setNumberOfEvents(value);
+
+        if (isNaN(value)) {
+            setErrorAlert('Value is not a number');
+        } else if (value > 32) {
+            setErrorAlert('Maximum value 32 is allowed');
+        } else if (value <= 0) {
+            setErrorAlert('Minimum value is 1');
+        } else {
+            setErrorAlert('');
+            setCurrentNOE(value);
+        }
     };
 
     return (
-        <div>
-            <label htmlFor="number-of-events">Number of Events: </label>
+        <div id="number-of-events">
             <input
-                id="number-of-events"
-                type="number"
-                value={number}
-                onChange={handleInputChange}
-                role="textbox"
+                type="text"
+                defaultValue="32"
+                onChange={handleInputChanged}
+                data-testid="numberOfEventsInput"
             />
         </div>
     );

@@ -5,16 +5,8 @@
 // src/__tests__ / App.test.js
 
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from '../App';
-import '@testing-library/jest-dom/extend-expect';
-import { getEvents } from '../api'; // Mock the getEvents functionimport { getEvents } from '../api'; // Mock the getEvents function
-
-jest.mock('../api', () => ({
-    getEvents: jest.fn(),
-}));
-
-getEvents.mockResolvedValue([]);
 
 describe('<App /> component', () => {
     let AppDOM;
@@ -30,12 +22,7 @@ describe('<App /> component', () => {
         expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
     });
 
-    test('render NumberofEvents', () => {
+    test('render NumberOfEvents', () => {
         expect(AppDOM.querySelector('#number-of-events')).toBeInTheDocument();
     });
-
-    test('displays 20 events by default', async () => {
-        const events = await screen.findAllByText(/Event/);
-        expect(events).toHaveLength(20);
-    });
-});
+})

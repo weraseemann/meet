@@ -1,20 +1,28 @@
-// src/components/Event.js
-import React, { useState } from 'react';
+/// src/components/Event.js
+
+import { useState } from "react";
 
 const Event = ({ event }) => {
-    const [isCollapsed, setIsCollapsed] = useState(true);
-
+    const [showDetails, setShowDetails] = useState(false);
     return (
-        <div>
-            <h1 className="event-summary">{event.summary}</h1>
-            <p className="event-created">{event.created}</p>
-            <p className="event-location">{event.location}</p>
-            <button className="event-details-button" onClick={() => setIsCollapsed(!isCollapsed)}>
-                {isCollapsed ? 'Show Details' : 'Hide Details'}
+        <li>
+            <div className="eventSummary">
+                <h2>{event.summary}</h2>
+                <p>{event.location}</p>
+                <p>{event.created}</p>
+            </div>
+            {showDetails ? (
+                <div className="eventDetails">
+                    <p>{event.description}</p>
+                </div>
+            ) : null}
+            <button className="show-details-btn"
+                onClick={() => setShowDetails(!showDetails)}
+            >
+                {showDetails ? "Hide Details" : "Show Details"}
             </button>
-            {!isCollapsed && <p className="event-details">{event.details}</p>}
-        </div>
+        </li>
     );
-};
+}
 
 export default Event;

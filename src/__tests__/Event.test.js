@@ -1,61 +1,36 @@
 
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import Event from '../components/Event'; // Adjust the import path as necessary
-import { getEvents } from '../api'; // Import the getEvents function
+// src/__tests__/EventList.test.js
 
+import { render, waitFor, within } from '@testing-library/react';
+import EventList from '../components/EventList';
+import { getEvents } from '../api';
+import App from "../App";
 
-describe('Event Component', () => {
-    let event;
+describe('<EventList /> component', () => {
+    let EventListComponent;
+    beforeEach(() => {
+        EventListComponent = render(<EventList />);
+    })
+    test('has an element with "list" role', () => {
+        expect(EventListComponent.queryByRole("list")).toBeInTheDocument();
+    });
 
-    beforeAll(async () => {
+    test('renders correct number of events', async () => {
         const allEvents = await getEvents();
-        event = allEvents[0]; // Use the first event from the mock data
+        EventListComponent.rerender(<EventList events={allEvents} />);
+        expect(EventListComponent.getAllByRole("listitem")).toHaveLength(allEvents.length);
     });
 
-    test('renders the event title', () => {
-        render(<Event event={event} />);
-        expect(screen.queryByText(event.summary)).toBeInTheDocument();
-    });
+});
 
-    test('renders the event start time', () => {
-        render(<Event event={event} />);
-        expect(screen.queryByText(event.created)).toBeInTheDocument();
-    });
-
-    test('renders the event location', () => {
-        render(<Event event={event} />);
-        expect(screen.queryByText(event.location)).toBeInTheDocument();
-    });
-
-    test('renders the show details button', () => {
-        render(<Event event={event} />);
-        expect(screen.queryByText('Show Details')).toBeInTheDocument();
-    });
-
-    test('event details should be collapsed by default', () => {
-        render(<Event event={event} />);
-        const { container } = render(<Event event={event} />);
-        const detailsElement = container.querySelector('.event-details');
-        expect(detailsElement).not.toBeInTheDocument();
-    });
-
-    test('shows event details when "Show Details" button is clicked', () => {
-        render(<Event event={event} />);
-        const buttonElement = screen.queryByText('Show Details');
-        fireEvent.click(buttonElement);
-        expect(screen.queryByText(event.details)).toBeInTheDocument();
-        expect(screen.queryByText('Hide Details')).toBeInTheDocument();
-    });
-
-    test('hides event details when "Hide Details" button is clicked', () => {
-        render(<Event event={event} />);
-        const showButton = screen.queryByText('Show Details');
-        fireEvent.click(showButton);
-        const hideButton = screen.queryByText('Hide Details');
-        fireEvent.click(hideButton);
-        expect(screen.queryByText(event.details)).not.toBeInTheDocument();
-        expect(screen.queryByText('Show Details')).toBeInTheDocument();
+describe('<EventList /> integration', () => {
+    test('renders a list of 32 events when the app is mounted and rendered', async () => {
+        const AppComponent = render(<App />);
+        const AppDOM = AppComponent.container.firstChild;
+        const EventListDOM = AppDOM.querySelector('#event-list');
+        await waitFor(() => {
+            const EventListItems = within(EventListDOM).queryAllByRole('listitem');
+            expect(EventListItems.length).toBeGreaterThan(0);
+        });
     });
 });

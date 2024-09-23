@@ -1,26 +1,25 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 import NumberOfEvents from '../components/NumberOfEvents';
-
-describe('NumberOfEvents Component', () => {
-    test('contains an element with the role of the textbox', () => {
-        render(<NumberOfEvents setNumberOfEvents={() => { }} />);
-        const inputElement = screen.getByRole('textbox');
-        expect(inputElement).toBeInTheDocument();
+import { render } from '@testing-library/react';
+describe('<NumberOfEvents /> Component', () => {
+    let NumberOfEventsComponent;
+    beforeEach(() => {
+        NumberOfEventsComponent = render(
+            <NumberOfEvents setCurrentNOE={() => { }} setErrorAlert={() => { }} />
+        );
     });
 
-    test('default value of the input field is 32', () => {
-        render(<NumberOfEvents setNumberOfEvents={() => { }} />);
-        const inputElement = screen.getByRole('textbox');
-        expect(inputElement).toHaveValue(32);
+    test('has the input textbox', () => {
+        const input = NumberOfEventsComponent.queryByRole('textbox');
+        expect(input).toBeInTheDocument();
     });
-
-    test('value of the NumberOfEvents component’s textbox changes when a user types in it', async () => {
-        const { user } =
-            render(<NumberOfEvents setNumberOfEvents={() => { }} />);
-        const inputElement = screen.getByRole('textbox');
-        await user.type(inputElement, '{backspace}{backspace}10');
-        expect(inputElement).toHaveValue(10);
+    test('default number of events is 32', () => {
+        const input = NumberOfEventsComponent.queryByRole('textbox');
+        expect(input).toHaveValue('32');
+    });
+    test('updates number of events when user types', async () => {
+        const input = NumberOfEventsComponent.queryByRole('textbox');
+        await userEvent.type(input, '{backspace}{backspace}10');
+        expect(input).toHaveValue('10');
     });
 });
