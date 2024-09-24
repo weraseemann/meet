@@ -13,15 +13,59 @@
   }
 }
 
+.show-details-btn {
+  border-color: #088060;
+  display: inline-block;
+  background-color: #0ba27a;
+  color: #f8f3f3;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba (0, 0, 0, 0.3);
+  transition: opacity 0.4s;
+  padding: 10px;
+}
+
+.show-details-btn:hover, 
+.show-details-btn:focus {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+  background-color: #088060;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 30px;
+}
+
+.event-information {
+  width: 500px;               /* Set the width of the container */
+  margin: 0 auto;             /* Center the container horizontally */
+  text-align: center;         /* Center the text inside the container */
+  border: 1px, solid #b2f3cf;     /* Optional: Adds a border for visualization */
+  padding: 10px;  
+}
+
+.eventDetails {
+  width: 480px;               /* Set the width of the container */
+  margin: 0 auto;             /* Center the container horizontally */
+  text-align: left;         /* Center the text inside the container */
+  border: none;     /* Optional: Adds a border for visualization */
+  padding: 5px;              /* Optional: Adds padding for spacing */
+}
+
+.suggestions {
+  width: 150px;
+  margin: 0 auto;  
+  text-align: left; 
+  padding-bottom: 30px; 
 }
 
 .App-link {
