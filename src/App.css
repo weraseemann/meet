@@ -46,6 +46,9 @@
 }
 
 .event-information {
+  list-style-type: none; /* Removes bullet points */
+  padding-left: 0; /* Optional: Removes default left padding */
+  margin: 0;
   width: 500px;               /* Set the width of the container */
   margin: 0 auto;             /* Center the container horizontally */
   text-align: center;         /* Center the text inside the container */
@@ -62,6 +65,9 @@
 }
 
 .suggestions {
+  list-style-type: none; /* Removes bullet points */
+  padding-left: 0; /* Optional: Removes default left padding */
+  margin: 0;
   width: 150px;
   margin: 0 auto;  
   text-align: left; 
