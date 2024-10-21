@@ -5,7 +5,7 @@ import { useState } from "react";
 const Event = ({ event }) => {
     const [showDetails, setShowDetails] = useState(false);
     return (
-        <ul class="event-information">
+        <li className="event-information">
             <div className="eventSummary">
                 <h2>{event.summary}</h2>
                 <p>{event.location}</p>
@@ -21,7 +21,7 @@ const Event = ({ event }) => {
             >
                 {showDetails ? "Hide Details" : "Show Details"}
             </button>
-        </ul>
+        </li>
     );
 }
 
