@@ -23,8 +23,8 @@ Serverless functions for the Meet App allows scaling based on demand. With serve
   Then upcoming events from all cities will be displayed.
 
   Scenario 2: User should see a list of suggestions when they search for a city.
-  Given user is typing a city name in the search bar
-  When they type already one letter
+  Given user opens the app
+  When they type already one letter in the search bar
   Then a list of suggested cities will be displayed.
 
   Scenario 3: User can select a city from the suggested list.
