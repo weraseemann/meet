@@ -36,13 +36,13 @@ Serverless functions for the Meet App allows scaling based on demand. With serve
   User Story 1: As a user, I want event details to be collapsed by default. User Story 2: As a user, I want to be able to expand an event to see its details. User Story 3: As a user, I want to be able to collapse an event to hide its details.
  
   Scenario 1: An event element is collapsed by default.
-  Given user is viewing the list of events
-  When they open the app
-  Then event details should be collapsed by default.
+  Given user is openning the app
+  When the app display list of events
+  Then the user should see the event element collapsed by default.
   
   Scenario 2: User can expand an event to see details.
   Given user is viewing an event with collapsed details
-  When they click on any event
+  When they click on any show event button
   Then the event details will expand to show more information.
   
   Scenario 3: User can collapse an event to hide details.
@@ -54,9 +54,9 @@ Serverless functions for the Meet App allows scaling based on demand. With serve
   User Story 1: As a user, I want to see 20 events by default when I haven't specified a number. User Story 2: As a user, I want to be able to change the number of events displayed.
   
   Scenario 1: When user hasn’t specified a number, 20 events are shown by default.
-  Given user hasn't specified the number of events
-  When they access the app
-  Then 20 events will be displayed by default.
+  Given user access the app 
+  When they haven't specified the number of events
+  Then 32 events will be displayed by default
 
   Scenario 2: User can change the number of events displayed.
   Given user is viewing the list of events
