@@ -1,4 +1,5 @@
 // src/api.js
+// eslint-disable-next-line
 
 import mockData from './mock-data';
 
