@@ -87,7 +87,7 @@ export const getAccessToken = async () => {
         const code = await searchParams.get("code");
         if (!code) {
             const response = await fetch(
-                "https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/"
+                "https://ljt5mc191k.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
             );
             const result = await response.json();
             const { authUrl } = result;
