@@ -4,21 +4,24 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 // src/components/NumberOfEvents.js
 
+import { useState } from "react"
+import PropTypes from 'prop-types'
+
 const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
+    const [number, setNumber] = useState(32)
 
-    const handleInputChanged = (event) => {
-        const value = event.target.value;
-
-        if (isNaN(value) || value <= 0) {
-            setErrorAlert('Value is not a number');
-        } else if (value > 32) {
-            setErrorAlert('Maximum value 32 is allowed');
-        } else if (value <= 0) {
-            setErrorAlert('Minimum value is 1');
+    const handleInputChanged = (e) => {
+        let value = e.target.value
+        setNumber(value)
+        let errorText;
+        if(value === isNaN || value.length <= 0) { 
+          errorText = 'Please enter a valid number'
         } else {
-            setCurrentNOE(value);
+          errorText = ''
         }
-    };
+        setCurrentNOE(value)
+        setErrorAlert(errorText) 
+      }
 
     return (
         <div id="number-of-events">
@@ -36,3 +39,8 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
 };
 
 export default NumberOfEvents;
+
+NumberOfEvents.propTypes = {
+    setCurrentNOE: PropTypes.func.isRequired,
+    setErrorAlert: PropTypes.func.isRequired
+  }
