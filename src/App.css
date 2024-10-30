@@ -72,6 +72,15 @@
   margin: 0 auto;  
   text-align: left; 
   padding-bottom: 30px; 
+  
+}
+
+.alerts-container {
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
 }
 
 .App-link {
