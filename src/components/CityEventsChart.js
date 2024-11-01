@@ -54,7 +54,7 @@ const CityEventsChart = ({ allLocations, events }) => {
         <YAxis dataKey="count" type="number" name="number of events" allowDecimals={false} />
         <ZAxis dataKey="z" type="number" range={[64, 144]} name="score" unit="km" />
         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-        <Legend />
+        <Legend verticalAlign="top" layout="horizontal" content={<div style={{ marginBottom: '20px' }}>Popular Cities Events Chart</div>} />
         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
         <Scatter name="Popular Cities Events Chart" data={data} fill="#8884d8" />
       </ScatterChart>
