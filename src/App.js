@@ -47,7 +47,7 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert}/> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
-      <div className='h1'>
+      <div className='h1'> Find an event in a nearby city
       <CitySearch className="city-search"
         allLocations={allLocations}
         setCurrentCity={setCurrentCity} 

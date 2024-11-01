@@ -52,7 +52,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 6vmin);
+  font-size: calc(16px + 6vmin);
   color: white;
   margin-bottom: 0px;
 }
@@ -63,9 +63,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
   color: white;
-  font-size: 16px;
   margin-bottom: 30px;
 }
 
@@ -94,23 +93,35 @@
   margin: 0 auto;  
   text-align: left; 
   padding-bottom: 30px; 
+  font-size: calc(10px + 2vmin);
   
 }
 
 .city {
   font-size: 16px;
+  text-align: left;
+  width: 290px;
+  margin: 10px;
 }
 
 .NOE {
-  margin: 20px;
+  display: block;
+  width: 140px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px;
   font-size: 16px;
+  align-items: center;
+  margin-bottom: 40px;
+  
 }
+
 .alerts-container {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 250px;
+  width: 300px;
   z-index: 1000;
 }
 
