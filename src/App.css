@@ -70,26 +70,25 @@
 }
 
 .event-information {
-  list-style-type: none; /* Removes bullet points */
-  padding-left: 0; /* Optional: Removes default left padding */
-  width: 500px;               /* Set the width of the container */
-  margin: 30px auto;             /* Center the container horizontally */
-  text-align: center;         /* Center the text inside the container */
-  border: 1px, solid var(--color-4);     /* Optional: Adds a border for visualization */
+  list-style-type: none; 
+  width: 500px;               
+  margin: 30px auto;         
+  text-align: center;        
+  border: 1px, solid var(--color-4);   
   padding: 10px;  
 }
 
 .eventDetails {
-  width: 480px;               /* Set the width of the container */
-  margin: 0 auto;             /* Center the container horizontally */
-  text-align: left;         /* Center the text inside the container */
-  border: none;     /* Optional: Adds a border for visualization */
-  padding: 5px;              /* Optional: Adds padding for spacing */
+  width: 480px;           
+  margin: 0 auto;            
+  text-align: left;         
+  border: none;    
+  padding: 5px;             
 }
 
 .suggestions {
-  list-style-type: none; /* Removes bullet points */
-  padding-left: 0; /* Optional: Removes default left padding */
+  list-style-type: none; 
+  padding-left: 0;
   margin: 0;
   width: 150px;
   margin: 0 auto;  
