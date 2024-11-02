@@ -6,7 +6,7 @@ import PropsType from 'prop-types';
 
 const EventGenresChart = ({ events }) => {
   const [data, setData] = useState([])
-  const genres = [...new Set(events.map(event => event.summary))];
+  const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
   const colors = ['#DD0000', '#00DD00', '#0000DD', '#DDDD00', '#DD00DD'];
 
   useEffect(() => {
