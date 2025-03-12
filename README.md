@@ -6,11 +6,11 @@ Concidering the project requirements this App is not going to be complex and wil
 Serverless functions for the Meet App allows scaling based on demand. With serverless functions the app remains responsive regardless of level of traffic, reduce costs associated with running and maintaining servers 24/7. Payments will only be made when functions are executed. Using serverless functions I don’t need to worry about managing servers or infrastructure, I can only concentrate my workload on coding.
 
 # Key Features:
-● Filter Events by City.
-● Show/Hide Event Details.
-● Specify Number of Events.
-● Use the App When Offline.
-● Add an App Shortcut to the Home Screen.
+- Filter Events by City.
+- Show/Hide Event Details.
+- Specify Number of Events.
+- Use the App When Offline.
+- Add an App Shortcut to the Home Screen.
 
 # Project Features & Scenarios
 
