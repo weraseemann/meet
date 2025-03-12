@@ -139,6 +139,14 @@
   margin-bottom: 0.8rem;
 }
 
+.back-to-top {
+  color: #088060;
+}
+
+.back-to-top:hover {
+  color: #0ba27a;
+}
+
 
 @media (max-width: 768px) {
   .App-logo {
@@ -163,4 +171,6 @@
     transform: rotate(360deg);
   }
 }
+
+
 

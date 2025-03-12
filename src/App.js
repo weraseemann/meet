@@ -63,7 +63,15 @@ const App = () => {
       </div>
       <EventList
         events={events} />
-
+      <footer class="footer">
+      <p>
+      <a href="#top" class="back-to-top">Back to top</a>
+      </p>
+      <p>Info: This project is developed solely for educational purposes as part of the <a href="https://careerfoundry.com" target="_blank" rel="noopener noreferrer">Career Foundry</a> Full Stack Web Development Course.
+      </p>
+      <p>Visit the <a href="https://github.com/weraseemann/meet" target="_blank" rel="noopener noreferrer">Github page</a> for more info about this project.
+      </p>
+      </footer>
     </div>
   );
 }
